@@ -1,0 +1,53 @@
+:root {
+  /* --- Palette --- */
+  --color-bg: #FFF5EB;
+  --color-bg-alt: #FFF0E0;
+  --color-primary: #8B6F47;
+  --color-primary-light: #F5EDE3;
+  --color-primary-dark: #6B5535;
+  --color-accent: #C2785C;
+  --color-accent-light: #F8E8E0;
+  --color-accent-dark: #A0604A;
+  --color-text: #3A2F28;
+  --color-muted: #8A7E75;
+  --color-white: #FFFFFF;
+  --color-dark: #2A2118;
+
+  /* --- Typography --- */
+  --font-main: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-accent: 'Noto Serif JP', serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --line-height: 1.8;
+
+  /* --- Spacing (8px base) --- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+
+  /* --- Shape --- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 100px;
+
+  /* --- Elevation --- */
+  --shadow-sm: 0 2px 8px rgba(138, 126, 117, 0.10);
+  --shadow-md: 0 4px 24px rgba(138, 126, 117, 0.12);
+  --shadow-lg: 0 8px 40px rgba(138, 126, 117, 0.16);
+
+  /* --- Transitions --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.3s;
+
+  /* --- Layout --- */
+  --container-max: 1080px;
+  --nav-height: 64px;
+}

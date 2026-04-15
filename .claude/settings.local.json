@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(open http://localhost:8080/Users/shisenluo/VibeCoding/MimiHP/index.html)",
+      "Bash(open http://localhost:8080/index.html)",
+      "Bash(open *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
