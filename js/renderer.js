@@ -7,6 +7,7 @@
     el.innerHTML =
       '<a href="#hero" class="nav-logo">' + D.meta.title + '<span class="nav-furigana">' + D.meta.titleFurigana + '</span></a>' +
       '<ul class="nav-links">' +
+        '<li><a href="#about">' + D.about.heading + '</a></li>' +
         '<li><a href="#promotion">キャンペーン</a></li>' +
         '<li><a href="#staff">' + D.staff.heading + '</a></li>' +
         '<li><a href="#menu">料金</a></li>' +
