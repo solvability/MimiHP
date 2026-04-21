@@ -7,8 +7,9 @@
     el.innerHTML =
       '<a href="#hero" class="nav-logo">' + D.meta.title + '<span class="nav-furigana">' + D.meta.titleFurigana + '</span></a>' +
       '<ul class="nav-links">' +
-        '<li><a href="#about">' + D.about.heading + '</a></li>' +
+        '<li><a href="#promotion">キャンペーン</a></li>' +
         '<li><a href="#staff">' + D.staff.heading + '</a></li>' +
+        '<li><a href="#menu">料金</a></li>' +
         '<li><a href="#info">' + D.info.heading + '</a></li>' +
         '<li><a href="#faq">' + D.faq.heading + '</a></li>' +
         '<li><a href="tel:' + D.info.phone.replace(/-/g, '') + '" class="nav-cta">📞 ' + D.info.phone + '</a></li>' +
@@ -21,7 +22,15 @@
   // --- Hero ---
   function renderHero() {
     var el = document.querySelector('#hero .container');
+    var pills = '';
+    if (D.hero.highlights && D.hero.highlights.length) {
+      for (var i = 0; i < D.hero.highlights.length; i++) {
+        pills += '<span class="hero-pill">' + D.hero.highlights[i] + '</span>';
+      }
+      pills = '<div class="hero-highlights reveal">' + pills + '</div>';
+    }
     el.innerHTML =
+      pills +
       '<h1 class="hero-headline reveal">' + D.hero.headline + '</h1>' +
       '<p class="hero-sub reveal">' + D.hero.subCopy + '</p>' +
       '<a href="' + D.hero.ctaHref + '" class="btn btn-primary btn-lg reveal">' +
@@ -42,18 +51,47 @@
           '<p>' + p.text + '</p>' +
         '</div>';
     }
+    var gallery = '';
+    if (D.about.gallery && D.about.gallery.length) {
+      var imgs = '';
+      for (var j = 0; j < D.about.gallery.length; j++) {
+        var g = D.about.gallery[j];
+        imgs += '<img src="' + g.src + '" alt="' + g.alt + '" loading="lazy">';
+      }
+      gallery = '<div class="about-gallery reveal">' + imgs + '</div>';
+    }
     el.innerHTML =
       '<div class="section-heading reveal"><h2>' + D.about.heading + '</h2></div>' +
-      '<div class="about-grid">' + cards + '</div>';
+      '<div class="about-grid">' + cards + '</div>' +
+      gallery;
+  }
+
+  // --- Promotion ---
+  function renderPromotion() {
+    var el = document.querySelector('#promotion .container');
+    if (!el || !D.promotion) return;
+    var P = D.promotion;
+    el.innerHTML =
+      '<div class="section-heading reveal">' +
+        '<span class="promo-tag">' + P.tag + '</span>' +
+        '<h2>' + P.heading + '</h2>' +
+      '</div>' +
+      '<p class="promo-sub reveal">' + P.subCopy + '</p>' +
+      '<div class="promo-image-wrap reveal">' +
+        '<img class="promo-image" src="' + P.image + '" alt="' + P.imageAlt + '" loading="lazy">' +
+      '</div>';
   }
 
   // --- Staff ---
   function renderStaff() {
     var el = document.querySelector('#staff .container');
+    var avatar = D.staff.image
+      ? '<div class="staff-avatar"><img src="' + D.staff.image + '" alt="' + (D.staff.imageAlt || D.staff.name) + '" loading="lazy"></div>'
+      : '<div class="staff-avatar">🌸</div>';
     el.innerHTML =
       '<div class="section-heading reveal"><h2>' + D.staff.heading + '</h2></div>' +
       '<div class="staff-content reveal">' +
-        '<div class="staff-avatar">🌸</div>' +
+        avatar +
         '<div class="staff-name">' + D.staff.name + '</div>' +
         '<div class="staff-role">' + D.staff.role + '</div>' +
         '<div class="staff-career">' + D.staff.career + '</div>' +
@@ -61,10 +99,33 @@
       '</div>';
   }
 
+  // --- Menu ---
+  function renderMenu() {
+    var el = document.querySelector('#menu .container');
+    if (!el || !D.menu) return;
+    var M = D.menu;
+    el.innerHTML =
+      '<div class="section-heading reveal"><h2>' + M.heading + '</h2></div>' +
+      '<div class="menu-popular-badge reveal">' +
+        '<span class="menu-popular-label">' + M.popularLabel + '</span>' +
+        '<span class="menu-popular-item">' + M.popularItem + '</span>' +
+      '</div>' +
+      '<div class="menu-image-wrap reveal">' +
+        '<img class="menu-image" src="' + M.image + '" alt="' + M.imageAlt + '" loading="lazy">' +
+      '</div>' +
+      '<p class="menu-note reveal">' + M.note + '</p>';
+  }
+
   // --- Info ---
   function renderInfo() {
     var el = document.querySelector('#info .container');
     var mapSrc = 'https://maps.google.com/maps?q=' + encodeURIComponent(D.info.mapQuery) + '&output=embed&hl=ja';
+    var roomRow = D.info.room
+      ? '<div class="info-row">' +
+          '<div class="info-label">個室</div>' +
+          '<div class="info-value">' + D.info.room + '</div>' +
+        '</div>'
+      : '';
     el.innerHTML =
       '<div class="section-heading reveal"><h2>' + D.info.heading + '</h2></div>' +
       '<div class="info-grid">' +
@@ -89,6 +150,7 @@
             '<div class="info-label">営業時間</div>' +
             '<div class="info-value">' + D.info.hours + '</div>' +
           '</div>' +
+          roomRow +
           '<div class="info-row">' +
             '<div class="info-label">駐車場</div>' +
             '<div class="info-value">' + D.info.parking + '</div>' +
@@ -141,7 +203,9 @@
     renderNav();
     renderHero();
     renderAbout();
+    renderPromotion();
     renderStaff();
+    renderMenu();
     renderInfo();
     renderFaq();
     renderFooter();
