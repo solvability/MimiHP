@@ -201,42 +201,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* ==================== Promotion ==================== */
-#promotion {
-  background: linear-gradient(170deg, var(--color-accent-light) 0%, var(--color-bg) 100%);
-  text-align: center;
-}
-
-.promo-tag {
-  display: inline-block;
-  padding: var(--space-xs) var(--space-md);
-  background: var(--color-accent);
-  color: var(--color-white);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-md);
-}
-
-.promo-sub {
-  text-align: center;
-  color: var(--color-muted);
-  max-width: 640px;
-  margin: 0 auto var(--space-lg);
-}
-
-.promo-image-wrap {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.promo-image {
-  width: 100%;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-}
-
 /* ==================== Staff ==================== */
 #staff {
   background: var(--color-primary-light);

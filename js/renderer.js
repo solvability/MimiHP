@@ -8,7 +8,6 @@
       '<a href="#hero" class="nav-logo">' + D.meta.title + '<span class="nav-furigana">' + D.meta.titleFurigana + '</span></a>' +
       '<ul class="nav-links">' +
         '<li><a href="#about">' + D.about.heading + '</a></li>' +
-        '<li><a href="#promotion">キャンペーン</a></li>' +
         '<li><a href="#staff">' + D.staff.heading + '</a></li>' +
         '<li><a href="#menu">料金</a></li>' +
         '<li><a href="#info">' + D.info.heading + '</a></li>' +
@@ -65,22 +64,6 @@
       '<div class="section-heading reveal"><h2>' + D.about.heading + '</h2></div>' +
       '<div class="about-grid">' + cards + '</div>' +
       gallery;
-  }
-
-  // --- Promotion ---
-  function renderPromotion() {
-    var el = document.querySelector('#promotion .container');
-    if (!el || !D.promotion) return;
-    var P = D.promotion;
-    el.innerHTML =
-      '<div class="section-heading reveal">' +
-        '<span class="promo-tag">' + P.tag + '</span>' +
-        '<h2>' + P.heading + '</h2>' +
-      '</div>' +
-      '<p class="promo-sub reveal">' + P.subCopy + '</p>' +
-      '<div class="promo-image-wrap reveal">' +
-        '<img class="promo-image" src="' + P.image + '" alt="' + P.imageAlt + '" loading="lazy">' +
-      '</div>';
   }
 
   // --- Staff ---
@@ -204,7 +187,6 @@
     renderNav();
     renderHero();
     renderAbout();
-    renderPromotion();
     renderStaff();
     renderMenu();
     renderInfo();

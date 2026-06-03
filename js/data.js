@@ -43,14 +43,6 @@ window.MIMI_DATA = {
     ]
   },
 
-  promotion: {
-    heading: "5月限定キャンペーン実施中",
-    tag: "期間限定",
-    subCopy: "今だけの特別価格でご提供中。詳しくは画像をご覧ください。",
-    image: "assets/promotion.JPG",
-    imageAlt: "5月限定キャンペーンのお知らせ"
-  },
-
   staff: {
     heading: "スタッフ紹介",
     name: "ふゆみ",
